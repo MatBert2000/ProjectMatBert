@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Anybreak"
         tools:targetApi="31">
         <activity
+            android:name=".reels"
+            android:exported="false" />
+        <activity
             android:name=".profile"
             android:exported="false" />
         <activity
