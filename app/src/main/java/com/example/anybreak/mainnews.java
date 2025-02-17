@@ -40,6 +40,7 @@ public class mainnews extends AppCompatActivity {
         plusButton.setOnClickListener(v -> {
             Intent intent = new Intent(mainnews.this, createpost.class);
             startActivity(intent);
+
         });
     }
 
