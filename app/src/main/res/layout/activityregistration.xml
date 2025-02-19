@@ -8,19 +8,6 @@
     android:background="#2C2C2C"
     tools:context=".registration">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="159dp"
-        android:layout_height="165dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.079"
-        app:srcCompat="@drawable/bulk" />
-
-
-
 
     <EditText
         android:id="@+id/emailEditText"
@@ -120,5 +107,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.94"
         app:srcCompat="@drawable/signup" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="205dp"
+        android:layout_height="206dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03"
+        app:srcCompat="@drawable/meditation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

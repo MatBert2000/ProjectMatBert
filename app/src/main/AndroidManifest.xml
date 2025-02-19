@@ -22,10 +22,6 @@
             android:name=".profile"
             android:exported="false" />
         <activity
-            android:name=".ui.login.loginactivity"
-            android:exported="false"
-            android:label="@string/title_activity_loginactivity" />
-        <activity
             android:name=".mainnews"
             android:exported="false" />
         <activity
