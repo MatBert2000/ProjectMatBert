@@ -1,6 +1,7 @@
 package com.example.anybreak;
 
 import android.content.Intent;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.ViewOutlineProvider;
@@ -35,14 +36,23 @@ public class mainnews extends AppCompatActivity {
                 addImageWithBackground(Uri.parse(uriString));
             }
         }
-
+        // кнопка плюса
         ImageButton plusButton = findViewById(R.id.plus);
         plusButton.setOnClickListener(v -> {
             Intent intent = new Intent(mainnews.this, createpost.class);
             startActivity(intent);
-
         });
+        //  ес чо кнопка, профиля!
+        ImageButton profileButton = findViewById(R.id.profile);
+        profileButton.setOnClickListener(v -> {
+            Intent intent = new Intent(mainnews.this, profile.class);
+            startActivity(intent);
+        });
+
     }
+
+
+
 
     private void addImageWithBackground(Uri imageUri) {
         // Создаем контейнер для изображения и фона
