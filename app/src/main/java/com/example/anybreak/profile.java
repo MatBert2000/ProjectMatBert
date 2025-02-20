@@ -18,13 +18,13 @@ public class profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_profile);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.activityprofile), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        TextView accountTextView = findViewById(R.id.editprofile);
+        TextView accountTextView = findViewById(R.id.textView10);
         accountTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
