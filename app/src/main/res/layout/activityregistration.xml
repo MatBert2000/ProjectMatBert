@@ -15,9 +15,10 @@
         android:layout_height="56dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:textColor="#80EDF4E9"
         android:textColorHint="#808080"
         android:textSize="24sp"
+        android:textColor="#EDF4E9"
+        android:backgroundTint="#EDF4E9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.369"
@@ -33,6 +34,8 @@
         android:inputType="textPassword"
         android:textColorHint="#808080"
         android:textSize="24sp"
+        android:textColor="#EDF4E9"
+        android:backgroundTint="#EDF4E9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.372"
@@ -59,6 +62,7 @@
         android:gravity="center_horizontal"
         android:text="Forgot your password?"
         android:textColor="#EDF4E9"
+        style="oval"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -81,20 +85,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.81" />
 
-    <RadioButton
-        android:id="@+id/radioButton2"
-        android:layout_width="150dp"
-        android:layout_height="43dp"
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:buttonTint="@drawable/radio_button_selector"
         android:text="Remember me"
         android:textColor="#EDF4E9"
-        android:textColorLink="#C2FF14"
-        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.182"
+        app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.549" />
+        app:layout_constraintVertical_bias="0.548" />
 
     <ImageButton
         android:id="@+id/signupB"

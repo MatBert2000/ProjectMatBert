@@ -34,7 +34,7 @@ public class helpsupport extends AppCompatActivity {
             public void onClick(View v) {
                 String message = editTextMessage.getText().toString();
                 if (!message.isEmpty()) {
-                    // Запускаем асинхронную задачу для отправки сообщения
+
                     new SendMessageTask().execute(message);
                 } else {
                     Toast.makeText(helpsupport.this, "Введите сообщение!", Toast.LENGTH_SHORT).show();
@@ -51,7 +51,7 @@ public class helpsupport extends AppCompatActivity {
 
             try {
 
-                Socket socket = new Socket("192.168.1.23", 8888); // Замените на IP и порт вашего сервера
+                Socket socket = new Socket("192.168.1.23", 8888);
                 OutputStream outputStream = socket.getOutputStream();
 
 

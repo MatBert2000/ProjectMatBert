@@ -40,32 +40,39 @@ public class registration extends AppCompatActivity {
         signinButton.setOnClickListener(v -> {
             String login = loginEditText.getText().toString();
             String password = passwordEditText.getText().toString();
+
+
             if (login.isEmpty() || password.isEmpty() || !login.contains("@")) {
                 Toast.makeText(registration.this, "Неправильно введены данные.", Toast.LENGTH_SHORT).show();
-            } else {
-                // Переход на основную активность
-                Intent intent = new Intent(registration.this, mainnews.class);
-                startActivity(intent);
-
-                // Сохранение данных в Firestore
-                Map<String, Object> user = new HashMap<>();
-                user.put("Email", login);
-                user.put("Password", password);
-
-                firestore.collection("users").add(user)
-                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                            @Override
-                            public void onSuccess(DocumentReference documentReference) {
-                                Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
-                            }
-                        });
+                return;
             }
+
+            if (password.length() < 6) {
+                Toast.makeText(registration.this, "Пароль должен состоять минимум из 6 символов", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            Intent intent = new Intent(registration.this, mainnews.class);
+            startActivity(intent);
+
+            // Сохранение данных в Firestore
+            Map<String, Object> user = new HashMap<>();
+            user.put("Email", login);
+            user.put("Password", password);
+
+            firestore.collection("users").add(user)
+                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                        @Override
+                        public void onSuccess(DocumentReference documentReference) {
+                            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
+                        }
+                    });
         });
 
         // Кнопка для перехода на экран регистрации

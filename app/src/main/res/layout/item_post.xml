@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/mainnewspost"
+    android:padding="10dp"
+    android:layout_marginTop="95dp">
+
+    <!-- Имя пользователя -->
+
+    <!-- Текст поста -->
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="146dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="4dp"
+        android:text="Имя пользователя"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/postContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:padding="8dp"
+        android:text="Текст поста..."
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/username" />
+
+    <!-- Изображение поста -->
+    <com.jsibbold.zoomage.ZoomageView
+        android:id="@+id/postImage"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/postContent" />
+
+    <!-- Кнопка лайка -->
+    <ImageButton
+        android:id="@+id/likeButton"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Лайк"
+        android:src="@drawable/like_b"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/postImage" />
+
+    <!-- Количество лайков -->
+    <TextView
+        android:id="@+id/likeCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="13dp"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/likeButton"
+        app:layout_constraintTop_toBottomOf="@id/postImage" />
+
+    <!-- Кнопка комментариев -->
+    <ImageButton
+        android:id="@+id/commentButton"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Комментарии"
+        android:src="@drawable/command_b"
+        app:layout_constraintStart_toEndOf="@id/likeCount"
+        app:layout_constraintTop_toBottomOf="@id/postImage" />
+
+    <!-- Количество комментариев -->
+    <TextView
+        android:id="@+id/commentCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="13dp"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/commentButton"
+        app:layout_constraintTop_toBottomOf="@id/postImage" />
+
+    <!-- Кнопка репоста -->
+    <ImageButton
+        android:id="@+id/repostButton"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Репост"
+        android:src="@drawable/repost_b"
+        app:layout_constraintStart_toEndOf="@id/commentCount"
+        app:layout_constraintTop_toBottomOf="@id/postImage" />
+
+    <!-- Количество репостов -->
+    <TextView
+        android:id="@+id/repostCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="13dp"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/repostButton"
+        app:layout_constraintTop_toBottomOf="@id/postImage" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="56dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/postContent"
+        app:layout_constraintEnd_toStartOf="@+id/username"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/_account_circle_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
