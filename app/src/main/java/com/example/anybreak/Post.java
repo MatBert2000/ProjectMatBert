@@ -31,27 +31,27 @@ public class Post {
         return likeCount;
     }
 
+    public void setLikeCount(int likeCount) {
+        this.likeCount = likeCount;
+    }
+
     public int getCommentCount() {
         return commentCount;
+    }
+
+    public void setCommentCount(int commentCount) {
+        this.commentCount = commentCount;
     }
 
     public int getRepostCount() {
         return repostCount;
     }
 
+    public void setRepostCount(int repostCount) {
+        this.repostCount = repostCount;
+    }
+
     public Uri getImageUri() {
         return imageUri;
-    }
-
-    public void incrementLike() {
-        this.likeCount++;
-    }
-
-    public void incrementComment() {
-        this.commentCount++;
-    }
-
-    public void incrementRepost() {
-        this.repostCount++;
     }
 }

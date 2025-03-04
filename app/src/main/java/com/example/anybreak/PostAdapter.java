@@ -1,11 +1,9 @@
 package com.example.anybreak;
 
 import android.content.Context;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,16 +11,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.jsibbold.zoomage.ZoomageView;
+import com.bumptech.glide.Glide;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
-
     private Context context;
-    private ArrayList<Post> postList;
+    private List<Post> postList;
 
-    public PostAdapter(Context context, ArrayList<Post> postList) {
+    public PostAdapter(Context context, List<Post> postList) {
         this.context = context;
         this.postList = postList;
     }
@@ -44,26 +41,22 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         holder.commentCount.setText(String.valueOf(post.getCommentCount()));
         holder.repostCount.setText(String.valueOf(post.getRepostCount()));
 
-        Uri imageUri = post.getImageUri();
-        if (imageUri != null) {
-            holder.postImage.setImageURI(imageUri);
-        }
+        // Загрузка изображения
+        Glide.with(context).load(post.getImageUri()).into(holder.postImage);
 
-        // Лайк
+        // Обработчики нажатий для кнопок
         holder.likeButton.setOnClickListener(v -> {
-            post.incrementLike();
+            post.setLikeCount(post.getLikeCount() + 1);
             holder.likeCount.setText(String.valueOf(post.getLikeCount()));
         });
 
-        // Комментарий
         holder.commentButton.setOnClickListener(v -> {
-            post.incrementComment();
+            post.setCommentCount(post.getCommentCount() + 1);
             holder.commentCount.setText(String.valueOf(post.getCommentCount()));
         });
 
-        // Репост
         holder.repostButton.setOnClickListener(v -> {
-            post.incrementRepost();
+            post.setRepostCount(post.getRepostCount() + 1);
             holder.repostCount.setText(String.valueOf(post.getRepostCount()));
         });
     }
@@ -75,12 +68,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
     public static class PostViewHolder extends RecyclerView.ViewHolder {
         TextView username, content, likeCount, commentCount, repostCount;
-        ZoomageView postImage;
+        ImageView postImage;
         ImageButton likeButton, commentButton, repostButton;
 
         public PostViewHolder(@NonNull View itemView) {
             super(itemView);
-
             username = itemView.findViewById(R.id.username);
             content = itemView.findViewById(R.id.postContent);
             likeCount = itemView.findViewById(R.id.likeCount);
